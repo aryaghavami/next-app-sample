@@ -31,7 +31,7 @@ export default function Minting() {
         const signer = provider.getSigner();
         const contract = new ethers.Contract(
           process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!,
-          ABI,
+          ABI.abi,
           signer
         );
         const transaction = await contract.mint(mintAmount, {
@@ -73,7 +73,7 @@ export default function Minting() {
       const provider = new ethers.providers.Web3Provider(window.ethereum);
       const contract = new ethers.Contract(
         process.env.NEXT_PUBLIC_CONTRACT_ADDRESS!,
-        ABI,
+        ABI.abi,
         provider
       );
       const totalSupply = await contract.totalSupply();
@@ -81,8 +81,8 @@ export default function Minting() {
     }
     if (
       active &&
-      chainId &&
-      chainId.toString() === process.env.NEXT_PUBLIC_NETWORK_ID
+      chainId /*&&
+      chainId.toString() === process.env.NEXT_PUBLIC_NETWORK_ID*/
     ) {
       fetchTotalSupply();
     } else {

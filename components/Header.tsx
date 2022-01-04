@@ -34,16 +34,16 @@ export default function Header() {
 
   useEffect(() => {
     if (active) {
-      if (
-        chainId &&
-        chainId.toString() !== process.env.NEXT_PUBLIC_NETWORK_ID
-      ) {
-        setErrMsg(
-          `Change the network to ${process.env.NEXT_PUBLIC_NETWORK_ID}.`
-        );
-      } else {
-        setErrMsg('');
-      }
+      // if (
+      //   chainId &&
+      //   chainId.toString() !== process.env.NEXT_PUBLIC_NETWORK_ID
+      // ) {
+      //   setErrMsg(
+      //     `Change the network to ${process.env.NEXT_PUBLIC_NETWORK_ID}.`
+      //   );
+      // } else {
+      //   setErrMsg('');
+      // }
     } else {
       setErrMsg('');
     }
@@ -88,7 +88,7 @@ export default function Header() {
               >
                 <FaDiscord />
               </a>
-              <a
+              {/* <a
                 href={process.env.NEXT_PUBLIC_OPENSEA_URL}
                 aria-label={`${process.env.NEXT_PUBLIC_NFT_NAME} on OpenSea`}
                 rel="noopener noreferrer"
@@ -96,7 +96,7 @@ export default function Header() {
                 className="bg-gray-700 hover:bg-gray-600 rounded-full p-2"
               >
                 <FaShip />
-              </a>
+              </a> */}
 
               {active && account ? (
                 <span className="flex items-center space-x-2 p-2 bg-gray-700 rounded-full">
